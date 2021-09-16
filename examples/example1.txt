@@ -1,0 +1,23 @@
+Select  sport as SPORT,
+	name as 'ИМЯ',
+	age as age,
+	attrWithoutAlias,
+id as  'Идентификационный номер'
+from 	  ( select distinct
+          * from dbn alias
+          ) f1
+left join (
+Select distinct sport as SPORT
+	name as 'ИМЯ',
+	age as age,
+id as  'Идентификационный номер'
+from 	  ( select
+user.sport_db s1 from dbn alias having 1=1
+) f1
+where  id < 10
+) on 1=1
+join db2 base2 on 1=1 and 4=4
+right join db3 base3 on 3=3 or 4=4
+join db3 on 3=3 or 4=4
+where 		id < 10
+Order by id asc, age desc, name;
